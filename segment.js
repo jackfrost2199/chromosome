@@ -370,9 +370,9 @@ function chromosome(name,size,snpspercent) {
 	this.snpspercent = snpspercent; // SNP Percent
 }
 
-function snp (location, chrom, ref, snv, coverage) {
-	this.location = location;
+function snp (chrom, location, ref, snv, coverage) {
 	this.chrom = chrom;
+    this.location = location;
 	this.ref = ref;
 	this.snv = snv;
 	this.coverage = coverage;
@@ -431,7 +431,7 @@ function generateSNPs (csvsnp) {
 	console.log(__csv.length);
 	for (var i = 0; i < __csv.length; i++) {
 		var _csv = __csv[i].split(",");
-		snps[i] = new snp(parseInt(_csv[0]), _csv[1], _csv[2], _csv[3], parseInt(_csv[4]));
+		snps[i] = new snp(_csv[0], parseInt(_csv[1]), _csv[2], _csv[3], parseInt(_csv[4]));
 		console.log(snps[i]);
 	}	
 	return snps;

@@ -1,17 +1,25 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-  <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,700' rel='stylesheet' type='text/css'>
-  <script src="segment.js"></script>
-    <style>
-      body {
-        margin: 0px;
-        padding: 0px;
-		font-family: 'Maven Pro', sans-serif;
-      }
-    </style>
+  
+	<!-- Download font of choice from google fonts if desired -->
+	<link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,700' rel='stylesheet' type='text/css'>
+	
+	<!-- Include segment.js base file -->
+	<script src="segment.js"></script>
+	
+	<!-- Apply any styling for your page -->
+	<style>
+		body {
+		  margin: 0px;
+		  padding: 0px;
+		  font-family: 'Maven Pro', sans-serif;
+		}
+	</style>
   </head>
+  
   <body>
+  
   <div id="radialDisplay"></div>
     <script>
     // Inner radius
@@ -21,13 +29,13 @@
 
 	// Set up CSVs	
 	var csvchrom = "Chr1,250,.09333\nChr2,550,.25764\nChr3,525,.00\nChr4,100,.50\nChr5,75,.95\nChr6,5,.10333\nChr7,400,.65764\nChr8,312,.12\nChr9,178,.32\nChr10,275,.05\nChr11,40,.65764\nChr12,300,.12\nChr13,134,.32\nChr14,232,.05\nChr15,178,.32\nChr16,275,.05\nChr17,40,.65764\nChr18,300,.12\nChr19,134,.32\nChr20,232,.05";
-	var csvsnp = "110,Chr1,A,C,30\n220,Chr2,A,G,40\n325,Chr3,A,T,200\n70,Chr4,T,C,10\n54,Chr5,T,G,40\n2,Chr6,T,A,19\n234,Chr7,C,T,40\n211,Chr8,C,G,92\n156,Chr9,C,A,100\n192,Chr10,G,A,20\n22,Chr11,G,T,30\n210,Chr12,G,C,30\n104,Chr13,G,G,30\n104,Chr14,G,G,30";
+	var csvsnp = "Chr1,110,A,C,30\nChr2,220,A,G,40\nChr3,325,A,T,200\nChr4,70,T,C,10\nChr5,54,T,G,40\nChr6,2,T,A,19\nChr7,234,C,T,40\nChr8,211,C,G,92\nChr9,156,C,A,100\nChr10,192,G,A,20\nChr11,22,G,T,30\nChr12,210,G,C,30\nChr13,104,G,G,30\nChr14,104,G,G,30";
 		
 	// Draw segments
 	// csvchrom is a csv string made up of:
-	// name, size, snp%
+	//    Reference ID, Size, SNV Percentage
 	// csvsnp is a csv string made up of:
-	// location on chrom, chrom name, reference nucl, snp, coverage
+	//    Reference ID, Position, Reference Nucleotide, Variant Nucleotide, Coverage
 	// NO HEADER for eaither csv
 	// NO SPACES
 	defineSegments (innerRadius, canvas_width, canvas_height, csvchrom, csvsnp);
